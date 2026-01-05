@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import useScrollReveal from "@/hooks/useScrollReveal";
 
 const ContactSection = () => {
   const { toast } = useToast();
+  const { ref: textRef, isVisible: textVisible } = useScrollReveal();
+  const { ref: formRef, isVisible: formVisible } = useScrollReveal({ threshold: 0.1 });
+  
   const [formData, setFormData] = useState({
     brandName: "",
     quantity: "",
@@ -29,12 +33,23 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-32 lg:py-40 bg-ivory">
-      <div className="container mx-auto px-6 md:px-12">
+    <section id="contact" className="py-24 md:py-32 lg:py-40 relative overflow-hidden">
+      {/* Background with subtle animation */}
+      <div className="absolute inset-0 bg-ivory">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/3 right-0 w-1/2 h-1/2 bg-gradient-radial from-mist/40 to-transparent animate-breathe" />
+          <div className="absolute bottom-0 left-1/4 w-1/3 h-1/3 bg-gradient-radial from-stone/30 to-transparent animate-pulse-soft" />
+        </div>
+      </div>
+
+      <div className="container mx-auto px-6 md:px-12 relative">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Text Content */}
-          <div>
-            <div className="divider-elegant mb-8" />
+          <div 
+            ref={textRef}
+            className={`reveal-left ${textVisible ? 'visible' : ''}`}
+          >
+            <div className={`divider-elegant mb-8 transition-all duration-1000 ${textVisible ? 'w-16' : 'w-0'}`} />
             <h2 className="headline-section text-primary mb-6">
               Let's bottle your story.
             </h2>
@@ -42,17 +57,23 @@ const ContactSection = () => {
               Whether you're a neighborhood café or a five-star resort, we craft 
               custom water bottles that become part of your identity.
             </p>
-            <p className="text-poetic">
-              "The details are not the details.
-              <br />
-              They make the design."
-            </p>
-            <p className="body-small text-muted-foreground mt-4">— Charles Eames</p>
+            <blockquote className="relative pl-6 border-l-2 border-primary/30">
+              <p className="text-poetic">
+                "The details are not the details.
+                <br />
+                They make the design."
+              </p>
+              <footer className="body-small text-muted-foreground mt-4">— Charles Eames</footer>
+            </blockquote>
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-8">
-            <div>
+          <div 
+            ref={formRef}
+            className={`reveal-right ${formVisible ? 'visible' : ''}`}
+          >
+            <form onSubmit={handleSubmit} className="space-y-8">
+            <div className={`reveal ${formVisible ? 'visible' : ''}`} style={{ transitionDelay: '0.1s' }}>
               <label
                 htmlFor="brandName"
                 className="block body-small text-foreground mb-3"
@@ -66,12 +87,12 @@ const ContactSection = () => {
                 value={formData.brandName}
                 onChange={handleChange}
                 required
-                className="w-full px-0 py-4 bg-transparent border-0 border-b border-border focus:border-primary outline-none transition-colors duration-500 body-elegant"
+                className="w-full px-0 py-4 bg-transparent border-0 border-b border-border focus:border-primary outline-none transition-all duration-500 body-elegant focus:pl-2"
                 placeholder="Your establishment name"
               />
             </div>
 
-            <div>
+            <div className={`reveal ${formVisible ? 'visible' : ''}`} style={{ transitionDelay: '0.2s' }}>
               <label
                 htmlFor="quantity"
                 className="block body-small text-foreground mb-3"
@@ -84,7 +105,7 @@ const ContactSection = () => {
                 value={formData.quantity}
                 onChange={handleChange}
                 required
-                className="w-full px-0 py-4 bg-transparent border-0 border-b border-border focus:border-primary outline-none transition-colors duration-500 body-elegant cursor-pointer"
+                className="w-full px-0 py-4 bg-transparent border-0 border-b border-border focus:border-primary outline-none transition-all duration-500 body-elegant cursor-pointer focus:pl-2"
               >
                 <option value="">Select quantity</option>
                 <option value="100-500">100 - 500 bottles</option>
@@ -94,7 +115,7 @@ const ContactSection = () => {
               </select>
             </div>
 
-            <div>
+            <div className={`reveal ${formVisible ? 'visible' : ''}`} style={{ transitionDelay: '0.3s' }}>
               <label htmlFor="city" className="block body-small text-foreground mb-3">
                 Delivery City
               </label>
@@ -105,12 +126,12 @@ const ContactSection = () => {
                 value={formData.city}
                 onChange={handleChange}
                 required
-                className="w-full px-0 py-4 bg-transparent border-0 border-b border-border focus:border-primary outline-none transition-colors duration-500 body-elegant"
+                className="w-full px-0 py-4 bg-transparent border-0 border-b border-border focus:border-primary outline-none transition-all duration-500 body-elegant focus:pl-2"
                 placeholder="City for delivery"
               />
             </div>
 
-            <div>
+            <div className={`reveal ${formVisible ? 'visible' : ''}`} style={{ transitionDelay: '0.4s' }}>
               <label htmlFor="notes" className="block body-small text-foreground mb-3">
                 Custom Notes (Optional)
               </label>
@@ -120,15 +141,20 @@ const ContactSection = () => {
                 value={formData.notes}
                 onChange={handleChange}
                 rows={3}
-                className="w-full px-0 py-4 bg-transparent border-0 border-b border-border focus:border-primary outline-none transition-colors duration-500 body-elegant resize-none"
+                className="w-full px-0 py-4 bg-transparent border-0 border-b border-border focus:border-primary outline-none transition-all duration-500 body-elegant resize-none focus:pl-2"
                 placeholder="Tell us about your vision..."
               />
             </div>
 
-            <button type="submit" className="btn-primary w-full sm:w-auto">
-              Start Your Custom Bottles
-            </button>
-          </form>
+            <div className={`reveal ${formVisible ? 'visible' : ''}`} style={{ transitionDelay: '0.5s' }}>
+              <button type="submit" className="btn-primary w-full sm:w-auto group">
+                <span className="relative z-10 group-hover:text-primary-foreground transition-colors duration-500">
+                  Start Your Custom Bottles
+                </span>
+              </button>
+            </div>
+            </form>
+          </div>
         </div>
       </div>
     </section>

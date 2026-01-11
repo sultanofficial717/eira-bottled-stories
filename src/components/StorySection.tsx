@@ -20,7 +20,6 @@ const StorySection = () => {
             ref={sectionRef}
             className={`order-2 lg:order-1 reveal-left ${isVisible ? 'visible' : ''}`}
           >
-            <div className={`divider-elegant mb-8 transition-all duration-1000 ${isVisible ? 'w-16' : 'w-0'}`} />
             <h2 className="headline-section text-primary mb-8">
               Some stories are told in words.
             </h2>
@@ -31,7 +30,7 @@ const StorySection = () => {
             </p>
             <div className="space-y-6">
               <p className={`body-elegant text-muted-foreground reveal ${isVisible ? 'visible delay-100' : ''}`}>
-                EIRA is more than water — it's an experience. Every bottle carries the 
+                EIRA is more than water it's an experience. Every bottle carries the 
                 quiet elegance of moments shared, tables set with care, and conversations 
                 that linger.
               </p>
@@ -40,7 +39,7 @@ const StorySection = () => {
                 overlooked. We believe it deserves intention. It deserves identity.
               </p>
               <p className={`body-elegant text-muted-foreground reveal ${isVisible ? 'visible delay-300' : ''}`}>
-                Because the finest restaurants aren't remembered just for their food — 
+                Because the finest restaurants aren't remembered just for their food 
                 they're remembered for how they made you feel.
               </p>
             </div>

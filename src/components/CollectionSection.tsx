@@ -46,7 +46,7 @@ const CollectionSection = () => {
           ref={headerRef}
           className={`text-center max-w-3xl mx-auto mb-20 reveal ${headerVisible ? 'visible' : ''}`}
         >
-          <div className={`divider-elegant mx-auto mb-8 transition-all duration-1000 ${headerVisible ? 'w-16' : 'w-0'}`} />
+
           <h2 className="headline-section text-primary mb-6">
             Where water becomes story.
           </h2>

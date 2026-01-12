@@ -2,11 +2,12 @@
 
 Premium water bottle brand website showcasing our collection and custom bottle options.
 
+**GitHub Repository:** [eira-bottled-stories](https://github.com/yourusername/eira-bottled-stories)
+**Live Demo:** https://yourusername.github.io/eira-bottled-stories
+
 ## About the Project
 
 This is the official website for Eira Bottled Stories, a startup dedicated to creating premium, personalized water bottles. The website features our product collections, custom bottle creation options, and customer stories.
-
-**This is a private repository.**
 
 ## Getting Started
 

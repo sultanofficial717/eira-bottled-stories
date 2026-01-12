@@ -1,8 +1,13 @@
 {
-  "name": "vite_react_shadcn_ts",
-  "private": true,
-  "version": "0.0.0",
+  "name": "eira-bottled-stories",
+  "description": "EIRA — Custom-branded luxury water bottles for hospitality",
+  "private": false,
+  "version": "1.0.0",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/eira-bottled-stories.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

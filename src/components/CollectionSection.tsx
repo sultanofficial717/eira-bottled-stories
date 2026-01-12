@@ -1,5 +1,4 @@
 import restaurantImage from "@/assets/restaurant-table.jpg";
-import cafeImage from "@/assets/cafe-interior.jpg";
 import hotelImage from "@/assets/hotel-room.jpg";
 import resortImage from "@/assets/resort-terrace.jpg";
 import useScrollReveal from "@/hooks/useScrollReveal";
@@ -11,11 +10,6 @@ const collections = [
     caption: "Where every detail speaks of intention.",
   },
   {
-    image: cafeImage,
-    title: "Modern Café",
-    caption: "Morning light and quiet conversations.",
-  },
-  {
     image: hotelImage,
     title: "Boutique Hotel",
     caption: "A welcome that begins with a glass of water.",
@@ -23,7 +17,7 @@ const collections = [
   {
     image: resortImage,
     title: "Beach Resort",
-    caption: "The ocean on the table, the horizon in view.",
+    caption: "Just vibing with my own story.",
   },
 ];
 

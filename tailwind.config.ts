@@ -118,6 +118,9 @@ export default {
           "50%": { opacity: "0.7", transform: "scale(1.05)" },
         },
       },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+      },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
@@ -136,6 +139,16 @@ export default {
         '1000': '1000ms',
         '1600': '1600ms',
         '2400': '2400ms',
+      },
+      animationDelay: {
+        '100': '100ms',
+        '200': '200ms',
+        '300': '300ms',
+        '400': '400ms',
+        '500': '500ms',
+        '600': '600ms',
+        '700': '700ms',
+        '800': '800ms',
       },
     },
   },

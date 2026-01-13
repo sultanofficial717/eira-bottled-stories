@@ -6,7 +6,7 @@ import NotFound from "./pages/NotFound";
 const App = () => (
   <>
     <Sonner />
-    <BrowserRouter>
+    <BrowserRouter basename="/eira-bottled-stories/">
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="*" element={<NotFound />} />

@@ -100,12 +100,33 @@ export default {
           from: { opacity: "0" },
           to: { opacity: "1" },
         },
+        "drift-slow": {
+          "0%, 100%": { transform: "translate(0, 0) scale(1.05) rotate(0deg)" },
+          "33%": { transform: "translate(3%, 2%) scale(1.08) rotate(1deg)" },
+          "66%": { transform: "translate(-2%, 3%) scale(1.06) rotate(-1deg)" },
+        },
+        "breathe": {
+          "0%, 100%": { opacity: "0.6" },
+          "50%": { opacity: "0.8" },
+        },
+        "shimmer": {
+          "0%, 100%": { opacity: "0.3", transform: "translateX(-100%)" },
+          "50%": { opacity: "0.6", transform: "translateX(100%)" },
+        },
+        "pulse-soft": {
+          "0%, 100%": { opacity: "0.4", transform: "scale(1)" },
+          "50%": { opacity: "0.7", transform: "scale(1.05)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-up": "fade-up 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards",
         "fade-in": "fade-in 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+        "drift-slow": "drift-slow 15s ease-in-out infinite",
+        "breathe": "breathe 4s ease-in-out infinite",
+        "shimmer": "shimmer 8s ease-in-out infinite",
+        "pulse-soft": "pulse-soft 3s ease-in-out infinite",
       },
       transitionTimingFunction: {
         'elegant': 'cubic-bezier(0.22, 1, 0.36, 1)',

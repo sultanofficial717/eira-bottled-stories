@@ -433,46 +433,16 @@
   }
 }
 
-@keyframes driftSlow {
-  0%, 100% {
-    transform: translate(0, 0) scale(1.05) rotate(0deg);
+/* Animation timing/delay utilities */
+@layer utilities {
+  .delay-0 {
+    animation-delay: 0ms;
   }
-  33% {
-    transform: translate(3%, 2%) scale(1.08) rotate(1deg);
+  .delay-200 {
+    animation-delay: 200ms;
   }
-  66% {
-    transform: translate(-2%, 3%) scale(1.06) rotate(-1deg);
-  }
-}
-
-@keyframes breathe {
-  0%, 100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 0.8;
-  }
-}
-
-@keyframes shimmer {
-  0%, 100% {
-    opacity: 0.3;
-    transform: translateX(-100%);
-  }
-  50% {
-    opacity: 0.6;
-    transform: translateX(100%);
-  }
-}
-
-@keyframes pulseSoft {
-  0%, 100% {
-    opacity: 0.4;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(1.05);
+  .delay-400 {
+    animation-delay: 400ms;
   }
 }
 

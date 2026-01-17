@@ -49,32 +49,32 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 md:px-12 text-center">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {/* Tagline */}
-          <p className="animate-fade-up body-small text-primary tracking-[0.3em] uppercase mb-6">
+          <p className="animate-fade-up delay-100 body-small text-primary tracking-[0.4em] uppercase mb-4 md:mb-6 font-light">
             Every Sip. A Story.
           </p>
 
           {/* Headline */}
-          <h1 className="animate-fade-up delay-200 headline-hero text-primary mb-8 text-balance">
+          <h1 className="animate-fade-up delay-200 headline-hero text-primary mb-6 md:mb-8 text-balance leading-tight">
             Every sip has a story.
           </h1>
 
           {/* Subtext */}
-          <p className="animate-fade-up delay-400 text-poetic max-w-2xl mx-auto mb-12">
+          <p className="animate-fade-up delay-300 text-poetic max-w-3xl mx-auto mb-12 md:mb-16">
             Water crafted not just for taste — 
             <br className="hidden md:block" />
             but for moments, tables, and memories.
           </p>
 
           {/* CTAs */}
-          <div className="animate-fade-up delay-600 flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#custom" className="btn-primary group">
+          <div className="animate-fade-up delay-400 flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+            <a href="#custom" className="btn-primary group w-full sm:w-auto">
               <span className="relative z-10 group-hover:text-primary-foreground transition-colors duration-500">
                 Customize Your Bottles
               </span>
             </a>
-            <a href="#contact" className="btn-secondary group">
+            <a href="#contact" className="btn-secondary group w-full sm:w-auto">
               <span className="relative z-10 group-hover:text-primary-foreground transition-colors duration-500">
                 Partner With EIRA
               </span>

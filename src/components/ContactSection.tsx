@@ -49,7 +49,6 @@ const ContactSection = () => {
             ref={textRef}
             className={`reveal-left ${textVisible ? 'visible' : ''}`}
           >
-            <div className={`divider-elegant mb-8 transition-all duration-1000 ${textVisible ? 'w-16' : 'w-0'}`} />
             <h2 className="headline-section text-primary mb-6">
               Let's bottle your story.
             </h2>
@@ -97,7 +96,7 @@ const ContactSection = () => {
                 htmlFor="quantity"
                 className="block body-small text-foreground mb-3"
               >
-                Estimated Monthly Quantity
+                Estimated Monthly Quantity (Cartons)
               </label>
               <select
                 id="quantity"
@@ -107,11 +106,11 @@ const ContactSection = () => {
                 required
                 className="w-full px-0 py-4 bg-transparent border-0 border-b border-border focus:border-primary outline-none transition-all duration-500 body-elegant cursor-pointer focus:pl-2"
               >
-                <option value="">Select quantity</option>
-                <option value="100-500">100 - 500 bottles</option>
-                <option value="500-1000">500 - 1,000 bottles</option>
-                <option value="1000-5000">1,000 - 5,000 bottles</option>
-                <option value="5000+">5,000+ bottles</option>
+                <option value="">Select cartons</option>
+                <option value="100-150">100 - 150 cartons</option>
+                <option value="150-200">150 - 200 cartons</option>
+                <option value="300-400">300 - 400 cartons</option>
+                <option value="custom">Custom entry</option>
               </select>
             </div>
 

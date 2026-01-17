@@ -1,3 +1,5 @@
+import logoImg from "@/assets/logoeira.png";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -7,7 +9,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12 md:gap-8 mb-16">
           {/* Brand */}
           <div>
-            <h2 className="font-serif text-3xl tracking-tight mb-4">EIRA</h2>
+            <img
+              src={logoImg}
+              alt="EIRA Logo"
+              className="h-20 w-auto mb-6 filter drop-shadow-md transform hover:scale-105 transition-transform duration-500"
+            />
             <p className="font-serif italic text-primary-foreground/70">
               Every Sip. A Story.
             </p>
@@ -53,10 +59,10 @@ const Footer = () => {
             </h3>
             <div className="space-y-4">
               <a
-                href="mailto:hello@eira.water"
+                href="mailto:talharehman717@gmail.com"
                 className="block body-small text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-500"
               >
-                hello@eira.water
+                talharehman717@gmail.com
               </a>
               <p className="body-small text-primary-foreground/60">
                 For partnership inquiries
